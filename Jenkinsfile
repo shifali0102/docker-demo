@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:6-alpine' 
+            args '-p 3000:3000' 
+        }
+    }
     environment {
         branch = 'master'
         scmUrl = 'https://github.com/shifali0102/docker-demo.git'
