@@ -6,7 +6,7 @@ pipeline {
         }
     }
     environment {
-        branch = 'master'
+        branch = 'feature/*'
         scmUrl = 'https://github.com/shifali0102/docker-demo.git'
         serverPort = '8080'
         developmentServer = 'dev-myproject.mycompany.com'
