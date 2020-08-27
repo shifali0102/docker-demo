@@ -19,5 +19,10 @@ pipeline {
                 git branch: branch, credentialsId: 'GitCredentials', url: scmUrl
             }
         }
-     }
-	 }
+	stage('NPM INSTALL') {
+            steps {
+                sh 'npm install'
+            }
+        }
+  }
+}
