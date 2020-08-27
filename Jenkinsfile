@@ -12,6 +12,8 @@ pipeline {
         developmentServer = 'dev-myproject.mycompany.com'
         stagingServer = 'staging-myproject.mycompany.com'
         productionServer = 'production-myproject.mycompany.com'
+        HOME = '.'
+        
     }
     stages {
         stage('checkout git') {
@@ -21,7 +23,8 @@ pipeline {
         }
 	stage('NPM INSTALL') {
             steps {
-                sh 'sudo npm install'
+                sh 'npm -version'
+                sh 'npm install'
             }
         }
   }
