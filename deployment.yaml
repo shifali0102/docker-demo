@@ -17,30 +17,8 @@ spec:
                app: nodejs
        spec:
           containers:
-          - image: shifalisri0102/nodejs:50
-
-            imagePullPolicy: Always
-            ---
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-      name: nodejs
-      labels:
-        app: nodejs
-spec:
-    replicas: 1
-    selector:
-      matchLabels:
-         app: nodejs
-    template:
-       metadata:
-             name: nodejs
-             labels:
-               app: nodejs
-       spec:
-          containers:
           - name: nodejs
-            image: shifalisri0102/nodejs:52
+            image: shifalisri0102/nodejs:53
             imagePullPolicy: Always
 ---
 apiVersion: v1
@@ -53,18 +31,5 @@ spec:
     - port: 3000
       targetPort: 3000
 	  NodePort: 31009
-    selector:
-      app: nodejs
-
----
-apiVersion: v1
-kind: Service
-metadata:
-    name: nodejsservice
-spec:
-    type: Nodeport
-    ports:
-    - port: 3000
-      targetPort: 3000
     selector:
       app: nodejs
