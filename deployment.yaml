@@ -18,7 +18,7 @@ spec:
        spec:
           containers:
           - name: nodejs
-            image: shifalisri0102/nodejs:53
+            image: shifalisri0102/nodejs:54
             imagePullPolicy: Always
 ---
 apiVersion: v1
@@ -30,6 +30,6 @@ spec:
     ports:
     - port: 3000
       targetPort: 3000
-	  NodePort: 31009
+      nodePort: 31009
     selector:
       app: nodejs
