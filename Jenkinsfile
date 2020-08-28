@@ -23,9 +23,9 @@ pipeline {
         }
 	stage('Build Docker Image' ) {
 	    steps {
-	         sh 'docker build -t shifalisri0102/nodejs:$BUILD_ID .'
+	         sh 'docker build -t shifalisri0102/nodejs:latest .'
 	         withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-      		     sh 'docker push shifalisri0102/nodejs:$BUILD_ID'
+      		     sh 'docker push shifalisri0102/nodejs:latest'
 	                }
              }
         }
