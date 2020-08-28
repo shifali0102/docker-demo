@@ -40,7 +40,7 @@ spec:
        spec:
           containers:
           - name: nodejs
-            image: shifalisri0102/nodejs:49
+            image: shifalisri0102/nodejs:52
             imagePullPolicy: Always
 ---
 apiVersion: v1
